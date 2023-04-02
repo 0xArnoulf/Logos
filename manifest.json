@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Latin Locution for Every Day",
+    "version": "1.0",
+    "description": "Displays a different Latin locution and Wikipedia link for every day of the year.",
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "browser_action": {
+      "default_icon": "omega.png",
+      "default_popup": "index.html"
+    },
+    "permissions": [
+      "activeTab"
+    ]
+  }
+  
