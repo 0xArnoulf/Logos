@@ -263,7 +263,7 @@ let dynamicContent = [
 { text : "Ut Roma cadit, sic omnis terra", link : "https://en.wikipedia.org/wiki/List_of_Latin_phrases_(U)#ut_Roma_cadit,_sic_omnis_terra"},
 { text : "Amicus omnibus, amicus nemini", link : "https://en.wiktionary.org/wiki/A_friend_to_everyone_is_a_friend_to_no_one"},
 { text : "Fortis cadere, cedere non potest", link : "https://en.wikipedia.org/wiki/List_of_Latin_phrases_(F)#fortis_cadere,_cedere_non_potest"},
-{ text : "", link : ""},
+{ text : "Timeo hominem unius libri", link : "https://en.wikipedia.org/wiki/Homo_unius_libri"},
 { text : "", link : ""},
 { text : "", link : ""},
 { text : "", link : ""},
