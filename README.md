@@ -11,6 +11,7 @@ The extension displays every day a different latin/greek locution. Below, a wiki
 2. Open `chrome://extensions` and enable **Developer mode**
 3. Click **Load unpacked** and select the project folder
 4. Pin Logos from the extensions menu and click the Ω icon
+5. Open a new tab: Logos replaces the New Tab page. Chrome asks once whether to keep this change
 
 # Add a locution
 
@@ -28,7 +29,7 @@ Greek locutions add the original script and a language tag, and get the blue the
 {"text":"Logos","greek":"λόγος","lang":"grc","link":"https://en.wikipedia.org/wiki/Logos"}
 ```
 
-To preview a given day, open `index.html?day=84` (0 = January 1st).
+To preview a given day, open `index.html?day=84` or `newtab.html?day=84` (0 = January 1st).
 
 # Credits
 

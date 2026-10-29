@@ -82,7 +82,12 @@ Alegreya (Huerta Tipográfica, SIL OFL), self-hosted in `fonts/` for Latin, Lati
 
 ## Layout
 
-A fixed 320 × 300 panel. A frame band of four tessera rings (dark, gold, gold, dark), the Ω medallion straddling its top centre, the locution centred in a 256 × 168 box starting 58px from the top, and the colophon 34px from the bottom.
+Two formats share one page (`styles.css`, `popup.js`, `mosaic.js`).
+
+- **Toolbar popup** (`index.html`): a fixed 320 × 300 panel, tesserae 7.5px.
+- **New tab** (`newtab.html`): the whole window is the panel, tesserae 13px; the locution box spans the window minus `max(64px, 12vw)` on each side, phrase fitted from 112px (Greek 140px), colophon 20px. The context link opens in the same tab.
+
+Every mosaic dimension derives from the tessera size, so both formats look alike. In the popup: a frame band of four tessera rings (dark, gold, gold, dark), the Ω medallion straddling its top centre, the locution centred in a 256 × 168 box starting 58px from the top, and the colophon 34px from the bottom.
 
 ## Elevation & Depth
 

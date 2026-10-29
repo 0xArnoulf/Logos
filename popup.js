@@ -7,6 +7,12 @@ const separatorEl = document.getElementById("separator");
 const linkEl = document.getElementById("link");
 const boxEl = document.getElementById("locution");
 
+// Same page in two formats: the toolbar popup, or the full new tab
+const isTab = document.body.classList.contains("tab");
+const SIZES = isTab
+	? { latin: [112, 40], greek: [140, 56], tessera: 13 }
+	: { latin: [40, 20], greek: [44, 26], tessera: 7.5 };
+
 function render(quote) {
 	const isGreek = quote.lang === "grc";
 	document.body.dataset.lang = isGreek ? "grc" : "la";
@@ -20,13 +26,14 @@ function render(quote) {
 	if (quote.link) {
 		linkEl.href = quote.link;
 		linkEl.textContent = new URL(quote.link).hostname.includes("wiktionary") ? "Wiktionary" : "Wikipedia";
+		linkEl.target = isTab ? "_self" : "_blank";
 		linkEl.hidden = false;
 	} else {
 		linkEl.hidden = true;
 	}
 	separatorEl.hidden = linkEl.hidden;
 
-	fit(isGreek ? greekEl : phraseEl, isGreek ? [44, 26] : [40, 20]);
+	fit(isGreek ? greekEl : phraseEl, isGreek ? SIZES.greek : SIZES.latin);
 }
 
 // Shrink the main line until the locution fits its frame
@@ -45,7 +52,20 @@ async function main() {
 
 	await document.fonts.ready;
 	render(quote);
-	Mosaic.start(document.getElementById("mosaic"), { seed: day + 1, lang: document.body.dataset.lang });
+	Mosaic.start(document.getElementById("mosaic"), {
+		seed: day + 1,
+		lang: document.body.dataset.lang,
+		row: SIZES.tessera,
+	});
+
+	// Refit the locution when the new tab is resized
+	if (isTab) {
+		let pending = 0;
+		window.addEventListener("resize", () => {
+			clearTimeout(pending);
+			pending = setTimeout(() => render(quote), 120);
+		});
+	}
 }
 
 // Day of the year, 0-based (0 = Jan 1, 365 = Dec 31 of a leap year).
@@ -65,5 +85,5 @@ function previewDay() {
 main().catch((error) => {
 	console.error(error);
 	render({ text: "Errare humanum est", link: "" });
-	Mosaic.start(document.getElementById("mosaic"), { seed: 1, lang: "la" });
+	Mosaic.start(document.getElementById("mosaic"), { seed: 1, lang: "la", row: SIZES.tessera });
 });
