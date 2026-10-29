@@ -1,19 +1,20 @@
 {
-    "manifest_version": 2,
-    "name": "Latin Locution for Every Day",
-    "version": "1.0",
-    "description": "Displays a different Latin locution and Wikipedia link for every day of the year.",
-    "icons": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-    },
-    "browser_action": {
-      "default_icon": "omega.png",
-      "default_popup": "index.html"
-    },
-    "permissions": [
-      "activeTab"
-    ]
+  "manifest_version": 3,
+  "name": "Logos",
+  "version": "1.1.0",
+  "description": "A different Latin locution every day, with a Wikipedia link for context.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Logos — today's locution",
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   }
-  
+}
