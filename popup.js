@@ -16,11 +16,16 @@ function render({ text, link }) {
 async function main() {
 	const quotes = await (await fetch("quotes.json")).json();
 
-	// Day of the year (1-365)
-	const today = new Date();
-	const dayOfYear = Math.ceil((today - new Date(today.getFullYear(), 0, 1)) / 86400000);
+	// Cycle through the list so it works whatever its length
+	render(quotes[dayOfYear(new Date()) % quotes.length]);
+}
 
-	render(quotes[dayOfYear - 1]);
+// Day of the year, 0-based (0 = Jan 1, 365 = Dec 31 of a leap year).
+// Compared in UTC so daylight saving shifts can't skew the result.
+function dayOfYear(date) {
+	const startOfYear = Date.UTC(date.getFullYear(), 0, 1);
+	const startOfDay = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+	return (startOfDay - startOfYear) / 86400000;
 }
 
 main().catch((error) => {
