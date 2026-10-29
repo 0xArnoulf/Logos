@@ -117,9 +117,9 @@ const Mosaic = (() => {
 			lay(line, rand, row, "field", ring, tiles);
 		}
 
-		// The medallion holding the Ω, set over the top band
+		// The medallion holding the Ω, just below the top band
 		const medallion = [];
-		const center = [W / 2, row * 3.07];
+		const center = [W / 2, row * 7.73];
 		lay(circlePath(...center, row * 2.6), rand, row, "gold", 0, medallion);
 		lay(circlePath(...center, row * 1.6), rand, row, "deep", 0, medallion);
 		lay(circlePath(...center, row * 0.6), rand, row, "deep", 0, medallion);

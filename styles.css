@@ -35,10 +35,10 @@ body {
 	color: var(--field);
 }
 
-/* Toolbar popup: a fixed 320 x 300 panel. New tab: the whole window. */
+/* Toolbar popup: a fixed 320 x 320 panel. New tab: the whole window. */
 .popup {
 	width: 320px;
-	height: 300px;
+	height: 320px;
 }
 .tab {
 	width: 100vw;
@@ -57,10 +57,10 @@ body {
 	height: 100%;
 }
 
-/* The Ω medallion set into the top border band */
+/* The Ω medallion, set just below the top border band */
 .emblem {
 	position: absolute;
-	top: 0;
+	top: 35px;
 	left: 50%;
 	width: 46px;
 	height: 46px;
@@ -76,7 +76,7 @@ body {
 
 .locution {
 	position: absolute;
-	top: 58px;
+	top: 90px;
 	left: 32px;
 	right: 32px;
 	height: 168px;
@@ -166,6 +166,7 @@ body[data-lang="grc"] .phrase {
 
 /* New tab: the same panel at window scale (tesserae 13px instead of 7.5px) */
 .tab .emblem {
+	top: 60px;
 	width: 80px;
 	height: 80px;
 	margin-left: -40px;
@@ -174,7 +175,7 @@ body[data-lang="grc"] .phrase {
 	text-shadow: 0 2px 2px rgb(0 0 0 / 0.55);
 }
 .tab .locution {
-	top: 128px;
+	top: 168px;
 	bottom: 168px;
 	left: max(64px, 12vw);
 	right: max(64px, 12vw);
