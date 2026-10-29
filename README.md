@@ -21,3 +21,15 @@ Locutions live in [`quotes.json`](quotes.json), one per line:
 ```
 
 The list cycles day by day, so it can be any length. Leave `link` empty if there is no page to point to.
+
+Greek locutions add the original script and a language tag, and get the blue theme:
+
+```json
+{"text":"Logos","greek":"λόγος","lang":"grc","link":"https://en.wikipedia.org/wiki/Logos"}
+```
+
+To preview a given day, open `index.html?day=84` (0 = January 1st).
+
+# Credits
+
+Set in [Alegreya](https://github.com/huertatipografica/Alegreya) by Huerta Tipográfica, under the SIL Open Font License (`fonts/OFL.txt`).
